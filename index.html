@@ -3,71 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV Viewer</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #ffffff; /* White background for container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            border-radius: 10px; /* Rounded corners for container */
+            padding: 20px; /* Padding inside container */
+        }
+
+        #button-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, auto);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 5px;
+            font-size: 11px;
+            cursor: pointer;
+            background-color: #007BFF; /* Blue background for buttons */
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners for buttons */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #table-container {
+            width: 100%;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 8px;
             border: 1px solid #ddd;
+            box-sizing: border-box;
+            background-color: #ffffff; /* White background for table */
         }
-        th {
-            background-color: #f4f4f4;
+
+        table td {
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            background-color: #e9ecef; /* Light grey background for table cells */
+            color: #333333; /* Dark grey text color */
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        table td:nth-child(even) {
+            background-color: #f8f9fa; /* Slightly lighter grey for even cells */
+        }
+
+        #h2-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        h2 {
+            margin: 0;
         }
     </style>
+    <title>Table with Dynamic Content</title>
 </head>
 <body>
-    <h1>CSV Viewer</h1>
-    <h2>Computer Names</h2>
-    <table id="computernamesTable"></table>
-    <h2>Department Contacts</h2>
-    <table id="departmentcontactsTable"></table>
+    <div id="container">
+        <div id="button-container">
+            <button onclick="updateTables('ASKIT')">Central IT (ASK IT)</button>
+            <button onclick="updateTables('Surg')">HSIS - Formerly Dept of Surg</button>
+            <!-- Add more buttons as needed -->
+            <h2>Computer Names</h2>
+        </div>
+        <div id="table-container">
+            <table id="naming-convention-table">
+                <tbody></tbody>
+            </table>
+            <h2>Contact Information</h2>
+            <table id="contact-info-table">
+                <thead>
+                    <tr>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Dept</th>
+                        <th>Phone</th>
+                        <th>Group</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchCSV('computernames.csv', 'computernamesTable');
-            fetchCSV('departmentcontacts.csv', 'departmentcontactsTable');
-        });
+        let data = {};
+        let namingConventions = {};
 
-        function fetchCSV(filename, tableId) {
-            fetch(filename)
-                .then(response => response.text())
-                .then(csv => {
-                    const data = Papa.parse(csv, { header: true }).data;
-                    displayTable(data, tableId);
-                })
-                .catch(error => console.error('Error fetching CSV:', error));
+        async function fetchCSV() {
+            const response = await fetch('data.csv');
+            const text = await response.text();
+            parseCSV(text);
+            updateTables('ASKIT'); // Initialize with default table
         }
 
-        function displayTable(data, tableId) {
-            const table = document.getElementById(tableId);
-            table.innerHTML = '';
+        function parseCSV(text) {
+            const rows = text.split('\n').slice(1); // Skip the header row
+            rows.forEach(row => {
+                const [category, contact, email, dept, phone, group] = row.split(',');
 
-            if (data.length > 0) {
-                const headerRow = document.createElement('tr');
-                Object.keys(data[0]).forEach(key => {
-                    const th = document.createElement('th');
-                    th.textContent = key;
-                    headerRow.appendChild(th);
-                });
-                table.appendChild(headerRow);
+                if (!data[category]) {
+                    data[category] = [];
+                }
+                data[category].push({contact, email, dept, phone, group});
 
-                data.forEach(row => {
+                if (!namingConventions[category]) {
+                    namingConventions[category] = [];
+                }
+                namingConventions[category].push(contact); // Example, using contact as naming convention
+            });
+        }
+
+        function updateTables(category) {
+            updateNamingConventionTable(category);
+            updateContactInfoTable(category);
+        }
+
+        function updateNamingConventionTable(category) {
+            const tableBody = document.querySelector('#naming-convention-table tbody');
+            tableBody.innerHTML = ''; // Clear previous table content
+
+            const names = namingConventions[category] || [];
+            const rows = 9;
+            const columns = 7;
+
+            let nameIndex = 0;
+            for (let i = 0; i < rows; i++) {
+                const tr = document.createElement('tr');
+                for (let j = 0; j < columns; j++) {
+                    const td = document.createElement('td');
+                    td.textContent = names[nameIndex] || '';
+                    tr.appendChild(td);
+                    nameIndex++;
+                }
+                tableBody.appendChild(tr);
+            }
+        }
+
+        function updateContactInfoTable(department) {
+            const tableBody = document.querySelector('#contact-info-table tbody');
+            tableBody.innerHTML = ''; // Clear previous table content
+
+            const rows = data[department];
+            if (rows) {
+                rows.forEach(row => {
                     const tr = document.createElement('tr');
-                    Object.values(row).forEach(value => {
-                        const td = document.createElement('td');
-                        td.textContent = value;
-                        tr.appendChild(td);
-                    });
-                    table.appendChild(tr);
+                    tr.innerHTML = `
+                        <td>${row.contact}</td>
+                        <td>${row.email}</td>
+                        <td>${row.dept}</td>
+                        <td>${row.phone}</td>
+                        <td>${row.group}</td>
+                    `;
+                    tableBody.appendChild(tr);
                 });
             }
         }
+
+        window.onload = fetchCSV;
     </script>
 </body>
 </html>
+
 
