@@ -3,210 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f4f4f4; /* Light grey background */
-        }
-
-        #container {
-            display: flex;
-            flex-direction: column;
-            width: 80%;
-            max-width: 1200px;
-            background-color: #ffffff; /* White background for container */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-            border-radius: 10px; /* Rounded corners for container */
-            padding: 20px; /* Padding inside container */
-        }
-
-        #button-container {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(5, auto);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 5px;
-            font-size: 11px;
-            cursor: pointer;
-            background-color: #007BFF; /* Blue background for buttons */
-            color: white;
-            border: none;
-            border-radius: 5px; /* Rounded corners for buttons */
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
-        }
-
-        button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-        }
-
-        #table-container {
-            width: 100%;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-            background-color: #ffffff; /* White background for table */
-        }
-
-        table td, table th {
-            padding: 5px;
-            text-align: center;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-            background-color: #e9ecef; /* Light grey background for table cells */
-            color: #333333; /* Dark grey text color */
-            font-weight: bold;
-            font-size: 13px;
-        }
-
-        table td:nth-child(even), table th:nth-child(even) {
-            background-color: #f8f9fa; /* Slightly lighter grey for even cells */
-        }
-
-        #h2-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        h2 {
-            margin: 0;
-        }
-    </style>
-    <title>Table with Dynamic Content</title>
+    <title>Dynamic Naming Convention Table</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<header>
+    <h1>Ask IT Links and Scripts</h1>
+</header>
 <body>
+    <nav>
+        <ul>
+            <li><a href="Scripts.html">Scripts Page</a></li>
+            <li><a href="Service Portal Links.html">Service Portal Links Page</a></li>
+        </ul>
+    </nav>
+
     <div id="container">
         <div id="button-container">
-            <button onclick="updateTables('ASKIT')">Central IT (ASK IT)</button>
-            <button onclick="updateTables('Surg')">HSIS - Formerly Dept of Surg</button>
-            <!-- Add more buttons as needed -->
-            <h2>Computer Names</h2>
+            <button onclick="updateTable('ASKIT', 'ASKITD')">Central IT (ASK IT)</button>
+            <button onclick="updateTable('Surg', 'SURGD')">HSIS - Formerly Dept of Surg</button>
+            <button onclick="updateTable('1917', '1917D')">1917 IT Support RISC</button>
+            <button onclick="updateTable('Maintenance', 'MainD')">Building Maintenance</button>
+            <button onclick="updateTable('COLLAT', 'COLLATD')">COLLAT School of Biz</button>
+            <button onclick="updateTable('HSISID', 'HSISIDD')">HSIS Identity Mgmt</button>
+            <button onclick="updateTable('Optometry','OptoD')">Optometry</button>
+            <button onclick="updateTable('SOD', 'SODD')">School of Denistry (SDBIT)</button>
+            <button onclick="updateTable('WBHM', 'WBHMD')">WBHM</button>
+            <button onclick="updateTable('AOC', 'AOCD')">Alabama Organ Center</button>
+            <button onclick="updateTable('Callahan', 'CallahanD')">Callahan Eye Hosp</button>
+            <button onclick="updateTable('Digital', 'DigitalD')">Digital Strategy</button>
+            <button onclick="updateTable('HSISAsset', 'HSISAssetD')">HSIS Asset Management</button>
+            <button onclick="updateTable('Huntsville', 'HuntsvilleD')">Huntsville IT (HSV)</button>
+            <button onclick="updateTable('Path', 'PathD')">Pathology IT</button>
+            <button onclick="updateTable('SOE', 'SOED')">School of Engineering (SOE)</button>
+            <button onclick="updateTable('Anesthesia', 'AnesthesiaD')">Acesthesia</button>
+            <button onclick="updateTable('CCTSF','CCTSFD')">Cancer Center (CCTSF IT)</button>
+            <button onclick="updateTable('DOM','DOMD')">DOM - Dept. of Medicine</button>
+            <button onclick="updateTable('HSISBA','HSISBAD')">HSIS Business Apps</button>
+            <button onclick="updateTable('ICO','ICOD')">Institute for Cancer Outcomes</button>
+            <button onclick="updateTable('PEDS','PEDSD')">PEDS IT</button>
+            <button onclick="updateTable('MEIS','MEISD')">School of Medicine (MEIS)</button>
+            <button onclick="updateTable('AV','AVD')">AV</button>
+            <button onclick="updateTable('CASIT','CASITD')">CASIT</button>
+            <button onclick="updateTable('DOPM','DOPMD')">DOPM - Preventive Med</button>
+            <button onclick="updateTable('HSISHD', 'HSISHDD')">HSIS Help Desk</button>
+            <button onclick="updateTable('Neuro', 'NeuroD')">Neurobiology</button>
+            <button onclick="updateTable('Physical','PhysicalD')">Physical Med & Rehab</button>
+            <button onclick="updateTable('TvRepair', 'TvD')">UAB TV Repair</button>
+            <button onclick="updateTable('Biochem', 'BiochemD')">Biochem & Molecular</button>
+            <button onclick="updateTable('Facilities','FacilitiesD')">Facilities IT</button>
+            <button onclick="updateTable('HSISSYS','HSISSYSD')">HSIS Help Desk (SysAdmins)</button>
+            <button onclick="updateTable('OBGYN','OBGYND')">OB/GYN IT</button>
+            <button onclick="updateTable('RepairComm','RepairCommD')">RepairComm Backline</button>
+            <button onclick="updateTable('Viva','VivaD')">Viva Health IT</button>
         </div>
-        <div id="table-container">
+
+        <h2>Computer Names</h2>
+
+        <div class="table-container">
             <table id="naming-convention-table">
-                <tbody></tbody>
-            </table>
-            <h2>Contact Information</h2>
-            <table id="contact-info-table">
                 <thead>
                     <tr>
-                        <th>Contact</th>
-                        <th>Email</th>
-                        <th>Dept</th>
-                        <th>Phone</th>
-                        <th>Group</th>
+                        <th>Computer Names</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <!-- Table content will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <h2>Department Contacts</h2>
+        <div class="table-container">
+            <table id="department-contact-table">
+                <thead>
+                    <tr>
+                        <th>Contacts</th>
+                        <th>Contact Email</th>
+                        <th>Dept. Phone</th>
+                        <th>Distribution Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table content will be inserted here -->
+                </tbody>
             </table>
         </div>
     </div>
 
-    <script>
-        let namingConventions = {};
-        let contactData = {};
+    <script src="changeName.js"></script>
+</body>
+</html>
 
-        async function fetchCSV(file) {
-            const response = await fetch(file);
-            return await response.text();
-        }
-
-        async function loadData() {
-            const namingConventionsCSV = await fetchCSV('computernames.csv');
-            const contactDataCSV = await fetchCSV('departmentcontacts.csv');
-
-            parseNamingConventionsCSV(namingConventionsCSV);
-            parseContactDataCSV(contactDataCSV);
-
-            updateTables('ASKIT'); // Initialize with default table
-        }
-
-        function parseNamingConventionsCSV(text) {
-            const rows = text.split('\n').slice(1); // Skip the header row
-            rows.forEach(row => {
-                const [category, name] = row.split(',');
-
-                if (!namingConventions[category]) {
-                    namingConventions[category] = [];
-                }
-                namingConventions[category].push(name);
-            });
-        }
-
-        function parseContactDataCSV(text) {
-            const rows = text.split('\n').slice(1); // Skip the header row
-            rows.forEach(row => {
-                const [category, contact, email, dept, phone, group] = row.split(',');
-
-                if (!contactData[category]) {
-                    contactData[category] = [];
-                }
-                contactData[category].push({ contact, email, dept, phone, group });
-            });
-        }
-
-        function updateTables(category) {
-            updateNamingConventionTable(category);
-            updateContactInfoTable(category);
-        }
-
-        function updateNamingConventionTable(category) {
-            const tableBody = document.querySelector('#naming-convention-table tbody');
-            tableBody.innerHTML = ''; // Clear previous table content
-
-            const names = namingConventions[category] || [];
-            const rows = 9;
-            const columns = 7;
-
-            let nameIndex = 0;
-            for (let i = 0; i < rows; i++) {
-                const tr = document.createElement('tr');
-                for (let j = 0; j < columns; j++) {
-                    const td = document.createElement('td');
-                    td.textContent = names[nameIndex] || '';
-                    tr.appendChild(td);
-                    nameIndex++;
-                }
-                tableBody.appendChild(tr);
-            }
-        }
-
-        function updateContactInfoTable(department) {
-            const tableBody = document.querySelector('#contact-info-table tbody');
-            tableBody.innerHTML = ''; // Clear previous table content
-
-            const rows = contactData[department];
-            if (rows) {
-                rows.forEach(row => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td>${row.contact}</td>
-                        <td>${row.email}</td>
-                        <td>${row.dept}</td>
-                        <td>${row.phone}</td>
-                        <td>${row.group}</td>
-                    `;
-                    tableBody.appendChild(tr);
-                });
-            }
-        }
-
-        window.onload = loadData;
-    </script>
 </body>
 </html>
