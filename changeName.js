@@ -40,7 +40,7 @@
             });
         }
 
-        function updateTables(category) {
+        function updateTable(category) {
             updateNamingConventionTable(category);
             updateContactInfoTable(category);
         }
