@@ -13,7 +13,7 @@
             parseNamingConventionsCSV(namingConventionsCSV);
             parseContactDataCSV(contactDataCSV);
 
-            updateTables('ASKIT'); // Initialize with default table
+            updateTable('ASKIT'); // Initialize with default table
         }
 
         function parseNamingConventionsCSV(text) {
