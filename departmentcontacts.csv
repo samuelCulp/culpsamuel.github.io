@@ -1,7 +1,98 @@
-category,contact,email,dept,phone,group
-ASKIT,Alfredo Guzman,alfredo@example.com,Central IT,123-456-7890,Group A
-ASKIT,Boniface Sindala,boniface@example.com,Central IT,234-567-8901,Group B
-ASKIT,Michael Henderson,michael@example.com,Central IT,345-678-9012,Group C
-Surg,Jane Doe,jane@example.com,Surgery,456-789-0123,Group D
-Surg,John Smith,john@example.com,Surgery,567-890-1234,Group E
-...
+contact,ontact email,phone,group
+ASKITD,,,(205) 996-5555,AskIT@uab.edu
+SURGD,Demarkio Vincent | 934-6380,demarkio@uab.edu,,Surgeryit@uabmc.edu
+1917D,Alfredo Guzman,aguzman@uabmc.edu,934-1212,
+1917D,Boniface Sindala,bsindala@uabmc.edu,,
+1917D,Micheal Henderson,reimann@uab.edu,,
+MainD,Johnny Rottenbery | Heritage Hall,,,
+MainD,Kevin | Chemistry Building,,,
+COLLATD,David Childers | 975-8872,childer@uab.edu,,
+COLLATD,Phillip Cotton | 975-8918,fly@uab.edu,,
+HSISIDD,Brian Day,bmday@uabmc.edu,,iamteam@uabmc.edu
+OptoD,Chris Boutwell | 934-6567 | Dir Administrative Ops,cboutwel@uab.edu,,
+OptoD,Harold 'Joey' Jones | 934-2833 /cell: (205) 563-7609,hjjones@uab.edu,,
+SODD,Chris Walder | 975-7491,cklw@uab.edu,,
+SODD,Chris Campbell | 6-5417,jccampbe2001@uab.edu,,
+SODD,Joseph Lovetto | 934-5236,jlovetto@uab.edu,,
+SODD,Cedric Maddox | 975-3235,maddoxcl@uab.edu,,
+WBHMD,Darrell McCalla,dmcalla@uab.edu,934-9246,
+AOCD,Candance Barnes, IS Spec III | 731-9200,candancebarnes@alabamaorgancenter.org,,
+CallahanD,Chris Reid | (205) 325-8690 **ADOBE BUYER**,cgreid@uabmc.edu,325-8100,ophhelp@uab.edu
+CallahanD,Erron McKinney | (205) 325-8336,emckinney@uabmc.edu,,
+CallahanD,Jack Rawls | (205) 327-6863 | **ADOBE BUYER**,jrawls@uabmc.edu,,
+CallahanD,James Wesson | (205) 325-8336 | **ADOBE BUYER**,jwesson@uabmc.edu,,
+CallahanD,Lacinda Riesland, Exec Dir IT Infrastruct,lriesland@uabmc.edu,,
+CallahanD,Theron Gobble,tgobble@uabmc.edu,,
+DigitalD,Chris Humphries | 934-2374,chrishumphries@uab.edu,,
+HSISAssetD,Annette Jackson | **ADOBE BUYER**,annettejackson@uabmc.edu,,
+HSISAssetD,Geogia Cashion | 934-9234 | **ADOBE BUYER**,gcashion@uabmc.edu,,
+HSISAssetD,Lisa Shelton | **ADOBE BUYER**,lhshelton@uabmc.edu,,
+HuntsvilleD,James Baker (manager),,(256) 551-4482, (256) 824-3333,hsvhelp@uabmc.edu or helpdesk@uah.edu
+HuntsvilleD,Jennifer Childress,,,
+HuntsvilleD,Valorie Williams Spvsr - Material Mgmt | (256) 551-4525,,,
+PathD,Israel Ponce-Rodriguez | 934-6610 | **ADOBE BUYER**,israel@uab.edu,,pathis@uab.edu
+SOED,Jeremy Hicks | 934-8455,jhicks07@uab.edu,,
+SOED,Tommy Foley,tfoley@uab.edu,,
+AnesthesiaD,Noah Crum, IS Spec II | 975-2919 or 934-9650,ncrum@uabmc.edu,,
+CCTSFD,Alan Cook, IT Director,acook40@uab.edu,975-8240,cctsf@uab.edu
+CCTSFD,Elbert Jenkins, Consultant,elj@uab.edu,,
+CCTSFD,Wesley Pate,wpate@uab.edu,,
+DOMD,Ahmad Khan,akkhan@uabmc.edu,975-4357,DOMHelp@uab.edu
+DOMD,Bryan Duke | 975-8662 | (205)-601-1607,bryanduke@uabmc.edu,,
+DOMD,Cameron Davis,cameronrdavis@uabmc.edu,,
+DOMD,Craig Mosley,crmosley@uabmc.edu,,
+DOMD,Derek Gettis | **ADOBE BUYER**,dgettis@uabmc.edu,,
+DOMD,Hunter James Vines,hunterjvines@uabmc.edu,,
+DOMD,Jacob Ellis,jahkusbedell@uabmc.edu,,
+DOMD,Jahkus Bedell,jaylenking@uabmc.edu,,
+DOMD,Jamel Hardware,jellis@uabmc.edu,,
+DOMD,Jaylen King | **ADOBE BUYER**,jhardware@uabmc.edu,,
+DOMD,Jonathan Ingram,jingram@uabmc.edu,,
+DOMD,Nazmul Islam | 934-3616,nislam@uabmc.edu,,
+HSISHDD,,, (205) 934-8888,helpdesk@uabmc.edu
+HSISBAD,Euric Dinkins,edinkins@uabmc.edu,,businessapps@uabmc.edu
+HSISBAD,Tina Parker | 996-8775 cell: (256) 295-8086,twparker@uabmc.edu,,
+ICOD,Holly Simpson,,,
+PEDSD,Ashley McMullen,amcmullen@peds.uab.edu,638-6420,coahelp@childrensal.org
+PEDSD,Bryan Yates,byates@peds.uab.edu,,
+PEDSD,Cassandra Hudson(neonatology),chudson@peds.uab.edu,,
+PEDSD,Jane Bussey,jbussey@peds.uab.edu,,
+PEDSD,Justin Felder,jfelder@peds.uab.edu,,
+PEDSD,Matthew Duncan | 638-6422 | **ADOBE BUYER**,mduncan@uabmc.edu,,
+PEDSD,Nikitia Dials,nikitia.dials@childrensal.org,,
+MEISD,Adam Agee | 934-6616,acagee@uab.edu,934-6620,meis@uab.edu
+MEISD,Freddie Walker,fwalkerjr@uab.edu,934-6643,
+MEISD,MEIS AV Support | 934-5046,meis@uab.edu,,
+AVD,Stephen Kemp | cell# (205) 240-6891 | Tier 2 escalation only!,s1p2w1k8@uab.edu,975-3297,
+AVD,Walt Creel | cell# (205) 910-5291,whcreel@uab.edu,,
+CASITD,Kevin Worden,kworden@uab.edu,975-4500,casit@uab.edu
+CASITD,Mat Thompson,mathewt@uab.edu,,
+CASITD,Matthew Pace,mpace@uab.edu,,
+CASITD,Tejas Thorat,tejast@uab.edu,,
+DOPMD,Byron Chancellor,bchancellor@uabmc.edu,,DOPMHelp@uabmc.edu
+DOPMD,David Clabough,dclabough@uabmc.edu,,
+DOPMD,Rich D Searles | 934-7662,rsearles@uabmc.edu,,
+DOPMD,Sejong Bae,bsejong@uab.edu,,
+NeuroD,Peter Michael Allendorfer | 123-4567,pmalle24@uab.edu,,
+NeuroD,Gary Spradley, ISSpec III | cel: 369-4603,spradley@uab.edu,,
+PhysicalD,Vicki Farris | 934-5049,vfarris@uabmc.edu,,
+TvD,,,934-6636,
+BiochemD,Gary Spradley, IS Spec II | cell: 369-4603,pmalle24@uab.edu,934-4733,
+BiochemD,Peter Michael Allendorfer | 123-4567,spradley@uab.edu,,
+FacilitiesD,Clay Boyce | 934-2825 cell 410-3435,cboyce@uab.edu,934-2825,https://www.uab.edu/facilities/information-technology-it
+FacilitiesD,Craig Bowen,craigb@uab.edu,934-2825,
+FacilitiesD,Dave Gunnells | 934-2489 or 934-2487,gunnells@uab.edu,,
+FacilitiesD,Jeremy Crown,,,
+HSISSYSD,Brian Edwords,brianpedwards@uabmc.edu,934-8888,desktopdev@uabmc.edu
+HSISSYSD,Eric Fitts | 934-1189,efitts@uabmc.edu,,
+HSISSYSD,Ian McCandless | 975-3839,imccandless@uabmc.edu,,
+HSISSYSD,John Troyer | 975-357,jjjoyce@uabmc.edu,,
+HSISSYSD,Joseph Joyce Desktop | 975-0383,jtroyer@uabmc.edu,,
+HSISSYSD,Michael Hughes | 934-5080,mthughes@uabmc.edu,,
+HSISSYSD,Russell Sweeney | 975-3874,sweeneyr@uabmc.edu,,
+HSISSYSD,Travis Adair,ad@uab.edu,,
+BiologyD,Kevin Morrison | kevinbmorrison@gmail.com,kmorrison@uab.edu,,kmorrison@uab.edu
+CSAD,Christopher W Hicks | 934-5378 | IT Director,cwhicks@uab.edu,,csahelp@uab.edu
+PhysicsD,John Souzanso | 934-3491,jsouzan@uab.edu,,
+PhysicsD,Richard Everson,reverson@uab.edu,,
+HSISIDAD,,,helpdesk@uabmc.edu
