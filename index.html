@@ -61,7 +61,7 @@
             background-color: #ffffff; /* White background for table */
         }
 
-        table td {
+        table td, table th {
             padding: 5px;
             text-align: center;
             border: 1px solid #ddd;
@@ -72,7 +72,7 @@
             font-size: 13px;
         }
 
-        table td:nth-child(even) {
+        table td:nth-child(even), table th:nth-child(even) {
             background-color: #f8f9fa; /* Slightly lighter grey for even cells */
         }
 
@@ -118,30 +118,45 @@
     </div>
 
     <script>
-        let data = {};
         let namingConventions = {};
+        let contactData = {};
 
-        async function fetchCSV() {
-            const response = await fetch('data.csv');
-            const text = await response.text();
-            parseCSV(text);
+        async function fetchCSV(file) {
+            const response = await fetch(file);
+            return await response.text();
+        }
+
+        async function loadData() {
+            const namingConventionsCSV = await fetchCSV('naming_conventions.csv');
+            const contactDataCSV = await fetchCSV('contact_data.csv');
+
+            parseNamingConventionsCSV(namingConventionsCSV);
+            parseContactDataCSV(contactDataCSV);
+
             updateTables('ASKIT'); // Initialize with default table
         }
 
-        function parseCSV(text) {
+        function parseNamingConventionsCSV(text) {
             const rows = text.split('\n').slice(1); // Skip the header row
             rows.forEach(row => {
-                const [category, contact, email, dept, phone, group] = row.split(',');
-
-                if (!data[category]) {
-                    data[category] = [];
-                }
-                data[category].push({contact, email, dept, phone, group});
+                const [category, name] = row.split(',');
 
                 if (!namingConventions[category]) {
                     namingConventions[category] = [];
                 }
-                namingConventions[category].push(contact); // Example, using contact as naming convention
+                namingConventions[category].push(name);
+            });
+        }
+
+        function parseContactDataCSV(text) {
+            const rows = text.split('\n').slice(1); // Skip the header row
+            rows.forEach(row => {
+                const [category, contact, email, dept, phone, group] = row.split(',');
+
+                if (!contactData[category]) {
+                    contactData[category] = [];
+                }
+                contactData[category].push({ contact, email, dept, phone, group });
             });
         }
 
@@ -175,7 +190,7 @@
             const tableBody = document.querySelector('#contact-info-table tbody');
             tableBody.innerHTML = ''; // Clear previous table content
 
-            const rows = data[department];
+            const rows = contactData[department];
             if (rows) {
                 rows.forEach(row => {
                     const tr = document.createElement('tr');
@@ -191,9 +206,7 @@
             }
         }
 
-        window.onload = fetchCSV;
+        window.onload = loadData;
     </script>
 </body>
 </html>
-
-
