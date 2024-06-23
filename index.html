@@ -127,8 +127,8 @@
         }
 
         async function loadData() {
-            const namingConventionsCSV = await fetchCSV('naming_conventions.csv');
-            const contactDataCSV = await fetchCSV('contact_data.csv');
+            const namingConventionsCSV = await fetchCSV('computernames.csv');
+            const contactDataCSV = await fetchCSV('departmentcontacts.csv');
 
             parseNamingConventionsCSV(namingConventionsCSV);
             parseContactDataCSV(contactDataCSV);
